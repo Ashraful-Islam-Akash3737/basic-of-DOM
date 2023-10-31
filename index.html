@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        li{
+            color:tomato;
+        }
+        #fruits-title{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+        <p>Losasfdfdgdrem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus esse sapiente officia voluptatem officiis iusto recusandae asperiores, ratione sunt necessitatibus dolorem suscipit et obcaecati, soluta corporis minus velit id dignissimos!</p>
+    </header>
+    <main>
+        
+        <section>
+            <h1>my awesome DOM</h1>
+            <ul>
+                <li>jalali set</li>
+                <li>Shafayet</li>
+                <li>bonobas</li>
+            </ul> 
+        </section>  
+        <section class="fruits-container">
+            <h1 id="fruits-title">fruits i like</h1>
+            <ul>
+                <li>banana</li>
+                <li>mango</li>
+                <li>apple</li>
+            </ul>
+        </section>
+        <section>
+            <h1 id="places-title">places i like to visit</h1>
+            <ul>
+                <li class="important-places">makka</li>
+                <li class="important-places">madina</li>
+                <li class="important-places">al aksa</li>
+                <li class="other-place">masjid-e-haram</li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script>
+        const liCollection = document.getElementsByTagName("li");
+        for(const li of liCollection){
+            console.log(li.innerText);
+        }
+        const allHeadings = document.getElementsByTagName("h1");
+        for(const h1 of allHeadings){
+            console.log(h1.innerText);
+        }
+        const fruitsTitle = document.getElementById("fruits-title");
+        fruitsTitle.innerText = "my favourite fruits"
+
+        const places = document.getElementsByClassName("important-places");
+        for(const place of places){
+            console.log(place.innerText);
+        }
+        const someLi = document.querySelectorAll(".fruits-container li");
+        console.log(someLi);
+        for(const li of someLi){
+            console.log(li.innerText);
+        }
+    </script>
+</body>
+</html>
